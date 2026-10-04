@@ -1,11 +1,10 @@
-import { pool } from './database.js';
+import { pool } from "./database.js";
 
 const getLocations = async (req, res) => {
   try {
     const results = await pool.query(`SELECT * FROM locations`);
     res.status(200).json(results.rows);
-  }
-  catch (err) {
+  } catch (err) {
     res.status(409).json({ error: err.message });
   }
 };
@@ -13,10 +12,11 @@ const getLocations = async (req, res) => {
 const getLocationById = async (req, res) => {
   try {
     const locationId = req.params.id;
-    const results = await pool.query(`SELECT * FROM events WHERE id = $1`, [locationId]);
+    const results = await pool.query(`SELECT * FROM events WHERE id = $1`, [
+      locationId,
+    ]);
     res.status(200).json(results.rows);
-  }
-  catch (err) {
+  } catch (err) {
     res.status(409).json({ error: err.message });
   }
 };

@@ -1,5 +1,5 @@
 const getAllEvents = async () => {
-  const response = await fetch('/events');
+  const response = await fetch("/events");
   const data = await response.json();
   return data;
 };

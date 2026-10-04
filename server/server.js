@@ -1,35 +1,32 @@
-import express from 'express'
-import path from 'path'
-import favicon from 'serve-favicon'
-import dotenv from 'dotenv'
-import eventRouter from './routes/eventRoutes.js';
-import locationRouter from './routes/locationRoutes.js';
+import express from "express";
+import path from "path";
+import favicon from "serve-favicon";
+import dotenv from "dotenv";
+import eventRouter from "./routes/eventRoutes.js";
+import locationRouter from "./routes/locationRoutes.js";
 
-dotenv.config()
+dotenv.config();
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-if (process.env.NODE_ENV === 'development') {
-    app.use(favicon(path.resolve('../', 'client', 'public', 'party.png')))
+if (process.env.NODE_ENV === "development") {
+  app.use(favicon(path.resolve("../", "client", "public", "party.png")));
+} else if (process.env.NODE_ENV === "production") {
+  app.use(favicon(path.resolve("public", "party.png")));
+  app.use(express.static("public"));
 }
-else if (process.env.NODE_ENV === 'production') {
-    app.use(favicon(path.resolve('public', 'party.png')))
-    app.use(express.static('public'))
-}
 
-app.use('/events', eventRouter);
-app.use('/locations', locationRouter);
+app.use("/events", eventRouter);
+app.use("/locations", locationRouter);
 
-if (process.env.NODE_ENV === 'production') {
-    app.get('/*', (_, res) =>
-        res.sendFile(path.resolve('public', 'index.html'))
-    )
+if (process.env.NODE_ENV === "production") {
+  app.get("/*", (_, res) => res.sendFile(path.resolve("public", "index.html")));
 }
 
 app.listen(PORT, () => {
-    console.log(`server listening on http://localhost:${PORT}`)
-})
+  console.log(`server listening on http://localhost:${PORT}`);
+});

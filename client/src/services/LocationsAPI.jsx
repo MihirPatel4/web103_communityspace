@@ -1,5 +1,5 @@
 const getAllLocations = async () => {
-  const response = await fetch('/locations');
+  const response = await fetch("/locations");
   const data = await response.json();
   return data;
 };
