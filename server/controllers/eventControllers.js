@@ -9,11 +9,11 @@ const getEvents = async (req, res) => {
   }
 };
 
-const getEventById = async (req, res) => {
+const getEventsByLocation = async (req, res) => {
   try {
-    const eventId = req.params.id;
-    const results = await pool.query(`SELECT * FROM events WHERE id = $1`, [
-      eventId,
+    const locationId = req.params.id;
+    const results = await pool.query(`SELECT * FROM events WHERE location_id = $1`, [
+      locationId,
     ]);
     res.status(200).json(results.rows);
   } catch (err) {
@@ -21,4 +21,4 @@ const getEventById = async (req, res) => {
   }
 };
 
-export default { getEvents, getEventById };
+export default { getEvents, getEventsByLocation };
