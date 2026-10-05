@@ -12,8 +12,8 @@ The following **required** functionality is completed:
 
 - [x] **The web app uses React to display data from the API**
 - [x] **The web app is connected to a PostgreSQL database, with an appropriately structured Events table**
-  - [ ] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [ ] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT \* FROM tablename;' to display your table contents.**
+  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT \* FROM tablename;' to display your table contents.**
 - [x] **The web app displays a title.**
 - [x] **Website includes a visual interface that allows users to select a location they would like to view.**
   - [x] _Note: A non-visual list of links to different locations is insufficient._
@@ -33,7 +33,7 @@ Here are the walkthroughs of implemented required features:
 
 <img src='https://i.imgur.com/H9Ev44Q.gif' title='Video Walkthrough' width='' alt='Database Walkthrough' />
 
-<img src='https://i.imgur.com/OiZUhzl.gif' title='Video Walkthrough' width='700px' alt='Web App Walkthrough' />
+<img src='https://i.imgur.com/UZ8B3s5.gif' title='Video Walkthrough' width='' alt='Web App Walkthrough' />
 
 GIFs created with LICEcap
 
