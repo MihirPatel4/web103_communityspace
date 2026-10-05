@@ -5,39 +5,37 @@ import LocationsAPI from "../services/LocationsAPI";
 import EventsAPI from "../services/EventsAPI";
 
 const LocationEvents = ({ index }) => {
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState(null);
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    async () => {
+    (async () => {
       try {
         const locationData = await LocationsAPI.getLocationById(index);
-        setLocation(locationData);
+        setLocation(locationData[0]);
       } catch (error) {
         throw error;
       }
 
       try {
-        const eventsData = await EventsAPI.getAllEvents();
+        const eventsData = await EventsAPI.getEventsByLocation(index);
         setEvents(eventsData);
       } catch (error) {
         throw error;
       }
-    };
-  });
+    })();
+  }, [index]);
 
   return (
     <div className="location-events">
       <header>
         <div className="location-image">
-          <img src={location.image} />
+          {location?.image && <img src={location.image} alt={location.name} />}
         </div>
 
         <div className="location-info">
-          <h2>{location.name}</h2>
-          <p>
-            {location.address}, {location.city}, {location.state} {location.zip}
-          </p>
+          <h2>{location?.name}</h2>
+          <p>{location?.address}</p>
         </div>
       </header>
 
@@ -47,9 +45,8 @@ const LocationEvents = ({ index }) => {
             <Event
               key={event.id}
               id={event.id}
-              title={event.title}
+              name={event.name}
               date={event.date}
-              time={event.time}
               image={event.image}
             />
           ))
