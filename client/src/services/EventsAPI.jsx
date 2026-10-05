@@ -1,13 +1,13 @@
 const getAllEvents = async () => {
-  const response = await fetch("/events");
+  const response = await fetch("/api/events");
   const data = await response.json();
   return data;
 };
 
-const getEventById = async (id) => {
-  const response = await fetch(`/events/${id}`);
+const getEventsByLocation = async (location_id) => {
+  const response = await fetch(`/api/events/${location_id}`);
   const data = await response.json();
   return data;
 };
 
-export default { getAllEvents, getEventById };
+export default { getAllEvents, getEventsByLocation };
