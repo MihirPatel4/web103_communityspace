@@ -4,6 +4,6 @@ import eventControllers from '../controllers/eventControllers.js';
 const router = express.Router();
 
 router.get('/', eventControllers.getEvents);
-router.get('/:id', eventControllers.getEventById);
+router.get('/:id', eventControllers.getEventsByLocation);
 
 export default router;
