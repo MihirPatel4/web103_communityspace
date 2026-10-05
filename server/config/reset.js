@@ -13,7 +13,8 @@ const reset = async () => {
       CREATE TABLE locations (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        address VARCHAR(255) NOT NULL
+        address VARCHAR(255) NOT NULL,
+        image VARCHAR(255) NOT NULL
       )
     `);
     await pool.query(`
@@ -28,8 +29,8 @@ const reset = async () => {
 
     for (const location of locationData) {
       await pool.query(
-        "INSERT INTO locations (name, address) VALUES ($1, $2)",
-        [location.name, location.address],
+        "INSERT INTO locations (name, address, image) VALUES ($1, $2, $3)",
+        [location.name, location.address, location.image],
       );
     }
 
