@@ -12,7 +12,7 @@ const getLocations = async (req, res) => {
 const getLocationById = async (req, res) => {
   try {
     const locationId = req.params.id;
-    const results = await pool.query(`SELECT * FROM events WHERE id = $1`, [
+    const results = await pool.query(`SELECT * FROM locations WHERE id = $1`, [
       locationId,
     ]);
     res.status(200).json(results.rows);
