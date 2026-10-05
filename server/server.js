@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(express.static("public"));
 }
 
-app.use("/events", eventRouter);
+app.use("/api/events", eventRouter);
 app.use("/locations", locationRouter);
 
 if (process.env.NODE_ENV === "production") {
