@@ -31,9 +31,9 @@ The following **optional** features are implemented:
 
 Here are the walkthroughs of implemented required features:
 
-<img src='https://i.imgur.com/H9Ev44Q.gif' title='Video Walkthrough' width='' alt='Database Walkthrough' />
+<img src='https://i.imgur.com/H9Ev44Q.gif' title='Video Walkthrough' width='700' alt='Database Walkthrough' />
 
-<img src='https://i.imgur.com/UZ8B3s5.gif' title='Video Walkthrough' width='' alt='Web App Walkthrough' />
+<img src='https://i.imgur.com/vBFdugJ.gif' title='Video Walkthrough' width='700' alt='Web App Walkthrough' />
 
 GIFs created with LICEcap
 
