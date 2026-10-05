@@ -33,7 +33,7 @@ Here are the walkthroughs of implemented required features:
 
 <img src='https://i.imgur.com/H9Ev44Q.gif' title='Video Walkthrough' width='' alt='Database Walkthrough' />
 
-<img src='https://i.imgur.com/OiZUhzl.gif' title='Video Walkthrough' width='' alt='Web App Walkthrough' />
+<img src='https://i.imgur.com/OiZUhzl.gif' title='Video Walkthrough' width='700px' alt='Web App Walkthrough' />
 
 GIFs created with LICEcap
 
